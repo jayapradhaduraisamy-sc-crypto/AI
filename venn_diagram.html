@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML/Data Science Venn Diagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        
+        .diagram-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .legend {
+            margin-top: 30px;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .legend h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .ai-color { background: #FF6B6B; }
+        .ml-color { background: #4ECDC4; }
+        .ds-color { background: #FFE66D; }
+        .center-color { background: #EB3367; }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            
+            .legend-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 AI/ML/Data Science Ecosystem</h1>
+        
+        <div class="diagram-wrapper">
+            <svg viewBox="0 0 1000 850" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>
+                        text { font-family: Arial, sans-serif; font-weight: bold; }
+                        .main-title { font-size: 18px; fill: #1a1a1a; }
+                        .medium-label { font-size: 15px; fill: #333; }
+                        .small-label { font-size: 12px; fill: #555; }
+                        .center-label { font-size: 14px; fill: #fff; }
+                        .badge-text { font-size: 13px; fill: #333; }
+                    </style>
+                </defs>
+                
+                <!-- Background -->
+                <rect width="1000" height="850" fill="#ffffff"/>
+                
+                <!-- Large circles with transparency -->
+                <!-- AI Circle (Left) -->
+                <circle cx="280" cy="350" r="200" fill="#FF6B6B" opacity="0.15" stroke="#FF6B6B" stroke-width="2"/>
+                
+                <!-- ML Circle (Right) -->
+                <circle cx="620" cy="350" r="200" fill="#4ECDC4" opacity="0.15" stroke="#4ECDC4" stroke-width="2"/>
+                
+                <!-- Data Science Circle (Bottom) -->
+                <circle cx="450" cy="520" r="200" fill="#FFE66D" opacity="0.15" stroke="#FFE66D" stroke-width="2"/>
+                
+                <!-- Circle Labels -->
+                <text x="150" y="280" class="main-title">ARTIFICIAL</text>
+                <text x="170" y="305" class="main-title">INTELLIGENCE</text>
+                
+                <text x="570" y="280" class="main-title">MACHINE</text>
+                <text x="600" y="305" class="main-title">LEARNING</text>
+                
+                <text x="360" y="710" class="main-title">DATA SCIENCE</text>
+                
+                <!-- AI-Only Content (Left) -->
+                <text x="140" y="370" class="medium-label">Computer Vision</text>
+                <text x="145" y="395" class="small-label">• Robotics</text>
+                <text x="145" y="415" class="small-label">• NLP</text>
+                <text x="145" y="435" class="small-label">• Knowledge Graphs</text>
+                
+                <!-- ML-Only Content (Right) -->
+                <text x="680" y="370" class="medium-label">Supervised Learning</text>
+                <text x="685" y="395" class="small-label">• Classification</text>
+                <text x="685" y="415" class="small-label">• Regression</text>
+                <text x="685" y="435" class="small-label">• Ensemble Methods</text>
+                
+                <!-- Data Science-Only Content (Bottom) -->
+                <text x="350" y="620" class="small-label">Data Visualization</text>
+                <text x="370" y="640" class="small-label">Statistics & Analytics</text>
+                <text x="370" y="660" class="small-label">Data Cleaning</text>
+                
+                <!-- AI + ML (Top Center) -->
+                <text x="450" y="290" class="medium-label" fill="#8B5CF6">Deep Learning</text>
+                <text x="430" y="315" class="small-label" fill="#6D28D9">• Neural Networks</text>
+                <text x="435" y="335" class="small-label" fill="#6D28D9">• Transformers</text>
+                
+                <!-- AI + Data Science (Left-Bottom) -->
+                <text x="270" y="510" class="small-label">Feature Engineering</text>
+                <text x="275" y="530" class="small-label">AI Ethics</text>
+                
+                <!-- ML + Data Science (Right-Bottom) -->
+                <text x="600" y="510" class="small-label">Predictive Modeling</text>
+                <text x="615" y="530" class="small-label">Model Evaluation</text>
+                
+                <!-- CENTER - Core Intersection -->
+                <circle cx="450" cy="420" r="55" fill="#EB3367" opacity="0.4" stroke="#C41E3A" stroke-width="2"/>
+                <text x="450" y="410" class="center-label" text-anchor="middle" fill="#fff" font-size="16px">GenAI</text>
+                <text x="450" y="433" class="small-label" text-anchor="middle" fill="#fff">Agentic AI</text>
+                <text x="450" y="453" class="small-label" text-anchor="middle" fill="#fff">LLMs</text>
+                
+                <!-- Top Right Info Box - GenAI -->
+                <rect x="720" y="160" width="250" height="110" rx="8" fill="#FFF3CD" stroke="#FF9800" stroke-width="2"/>
+                <text x="845" y="185" class="medium-label" text-anchor="middle" fill="#E65100">Generative AI</text>
+                <text x="735" y="210" class="badge-text">• ChatGPT, Claude, Gemini</text>
+                <text x="735" y="230" class="badge-text">• Image Generation (DALL-E)</text>
+                <text x="735" y="250" class="badge-text">• Code Generation</text>
+                
+                <!-- Bottom Right Info Box - Agentic AI -->
+                <rect x="720" y="300" width="250" height="110" rx="8" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2"/>
+                <text x="845" y="325" class="medium-label" text-anchor="middle" fill="#1B5E20">Agentic AI</text>
+                <text x="735" y="350" class="badge-text">• Autonomous Agents</text>
+                <text x="735" y="370" class="badge-text">• Decision Making & Planning</text>
+                <text x="735" y="390" class="badge-text">• Tool Use & Reasoning</text>
+                
+                <!-- Connection arrows -->
+                <line x1="780" y1="160" x2="520" y2="80" stroke="#FF9800" stroke-width="2" stroke-dasharray="5,5" opacity="0.6"/>
+                <line x1="780" y1="300" x2="500" y2="470" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,5" opacity="0.6"/>
+            </svg>
+        </div>
+        
+        <div class="legend">
+            <h3>📚 Key Concepts</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <div class="legend-color ai-color"></div>
+                    <span><strong>AI:</strong> Broad field of intelligent systems, reasoning, and problem-solving</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color ml-color"></div>
+                    <span><strong>ML:</strong> Learning algorithms that improve performance from data</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color ds-color"></div>
+                    <span><strong>Data Science:</strong> Extracting insights and knowledge from data</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color center-color"></div>
+                    <span><strong>Core:</strong> Where all three intersect - cutting-edge AI applications</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
